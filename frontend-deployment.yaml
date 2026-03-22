@@ -28,8 +28,8 @@ spec:
               memory: "200Mi"
               cpu: "256m"
             limits:
-              memory: "400Mi"
-              cpu: "267m"
+              memory: "356Mi"
+              cpu: "500m"
           env:
             - name: MONGO_URI
               valueFrom:
