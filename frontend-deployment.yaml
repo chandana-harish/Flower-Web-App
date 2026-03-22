@@ -25,11 +25,11 @@ spec:
             - containerPort: 3015
           resources:
             requests:
-              memory: "200Mi"
-              cpu: "256m"
+              memory: "256Mi"
+              cpu: "158m"
             limits:
-              memory: "356Mi"
-              cpu: "500m"
+              memory: "512Mi"
+              cpu: "254m"
           env:
             - name: MONGO_URI
               valueFrom:
