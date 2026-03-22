@@ -37,7 +37,7 @@ spec:
             - name: MONGO_URL
               valueFrom:
                 secretKeyRef: 
-                  name: mongo-secret
+                  name: flower-secret
                   key: MONGO_URI
 ---
 apiVersion: v1
