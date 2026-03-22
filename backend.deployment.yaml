@@ -47,7 +47,7 @@ metadata:
   namespace: thanu-ns
 spec: 
   selector:
-    app: flower
+    app: mongo
   ports:
     - port: 27017
       targetPort: 27017
