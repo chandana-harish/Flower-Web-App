@@ -46,8 +46,8 @@ spec:
   selector:
     app: flower
   ports:
-    port: 3015
-    targetPort: 3015
+    - port: 3015
+      targetPort: 3015
   type: NodePort
 
 
