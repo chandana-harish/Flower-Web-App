@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: frontend-deployment 
+  namespace: thanu-ns 
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: flower
+  template:
+    metadata: 
+      lables:
+        app: flower
+    spec:
+      containers:
+        name: flower-container 
+        image: muralisocial123/kyndrl-flower-app:v1.1.0
+        ports:
+          containerPort: 3015
+        resourses:
+          requests:
+            cpu: "200m"
+            memory: "200Mi"
+          limit:
+            cpu: "200m"
+            memory: "200Mi"
+        env:
+          - name: MONGO_URL
+            valueFrom:
+              secretKeyRef: 
+                name: flower-secret
+                key: MONGO_URI
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: flower-service 
+  namespacew: thanu-ns
+spec: 
+  selector:
+    app: flower
+  ports:
+    port: 3015
+    targetPort: 3015
+  type: NodePort
+
+
+    
+
+      
