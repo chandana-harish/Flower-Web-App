@@ -21,24 +21,24 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: flower
+      app: mongo
   template:
     metadata: 
       lables:
-        app: flower
+        app: mongo
     spec:
       containers:
-        name: mongo-container 
-        image: mongo
-        ports:
-          containerPort: 3015
+        - name: mongo-container 
+          image: mongo
+          ports:
+            containerPort: 3015
         
-        env:
-          - name: MONGO_URL
-            valueFrom:
-              secretKeyRef: 
-                name: mongo-secret
-                key: MONGO_URI
+          env:
+            - name: MONGO_URL
+              valueFrom:
+                secretKeyRef: 
+                  name: mongo-secret
+                  key: MONGO_URI
 ---
 apiVersion: v1
 kind: Service
@@ -49,8 +49,8 @@ spec:
   selector:
     app: flower
   ports:
-    port: 27017
-    targetPort: 27017
+    - port: 27017
+      targetPort: 27017
   type: ClusterIP
 
 

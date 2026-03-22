@@ -19,23 +19,23 @@ spec:
         app: flower
     spec:
       containers:
-        name: flower-container 
-        image: muralisocial123/kyndrl-flower-app:v1.1.0
-        ports:
-          containerPort: 3015
-        resourses:
-          requests:
-            cpu: "200m"
-            memory: "200Mi"
-          limit:
-            cpu: "200m"
-            memory: "200Mi"
-        env:
-          - name: MONGO_URL
-            valueFrom:
-              secretKeyRef: 
-                name: flower-secret
-                key: MONGO_URI
+        - name: flower-container 
+          image: muralisocial123/kyndrl-flower-app:v1.1.0
+          ports:
+            containerPort: 3015
+          resourses:
+            requests:
+              cpu: "200m"
+              memory: "200Mi"
+            limit:
+              cpu: "200m"
+              memory: "200Mi"
+          env:
+            - name: MONGO_URL
+              valueFrom:
+                secretKeyRef: 
+                  name: flower-secret
+                  key: MONGO_URI
 ---
 apiVersion: v1
 kind: Service
