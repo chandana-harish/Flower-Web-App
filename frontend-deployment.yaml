@@ -15,7 +15,7 @@ spec:
       app: flower
   template:
     metadata: 
-      lables:
+      labels:
         app: flower
     spec:
       containers:

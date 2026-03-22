@@ -24,7 +24,7 @@ spec:
       app: mongo
   template:
     metadata: 
-      lables:
+      labels:
         app: mongo
     spec:
       containers:
