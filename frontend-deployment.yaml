@@ -23,7 +23,7 @@ spec:
           image: muralisocial123/kyndrl-flower-app:v1.1.0
           ports:
             - containerPort: 3015
-          resourses:
+          resources:
             requests:
               cpu: "200m"
               memory: "200Mi"
